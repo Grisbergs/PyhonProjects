@@ -8,7 +8,7 @@ def get_all_files(directory):
     return [str(file) for file in directory_path.rglob('*') if file.is_file()]
 
 # Directory to scan
-directory = r"\\Qtsprodkfxstor1\Data\2020-01-14\03722354"
+directory =r'C:\C#Class2'
 
 # Get all file paths
 file_paths = get_all_files(directory)
