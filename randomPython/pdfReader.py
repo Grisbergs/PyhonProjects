@@ -24,10 +24,14 @@ pdf_path = r'\\Qtsprodkfxstor1\Data\CANCELDOCS\Archive\312025\OK00184_7594483897
 text = extract_text_from_pdf(pdf_path)
 vin_pattern = r'\b[A-HJ-NPR-Z0-9]{17}\b'
 vin_pattern2 = r'^[A-HJ-NPR-Za-hj-npr-z\d]{9}[A-HJ-NPR-Za-hj-npr-z\d]{3}\d{5}$'
+date_pattern = r"Date(.{100})"
+date_pattern2 = r"(\d{2})[-/](\d{2})[-/](\d{4})\b|\b(\d{4})[-/](\d{2})[-/](\d{2})"
+
 
 
 match = re.search(vin_pattern, text)
 match2 = re.search(vin_pattern2, text)
+match3 = re.search(date_pattern,text,re.DOTALL)
 
 if match:
     print(f"Found VIN: {match.group()}")
@@ -36,3 +40,13 @@ else:
         print(f"PT2 Found VIN: {match2.group()}")
     else:
         print(text)
+if match3:
+    print(match3.group())
+    datelarge = match3.group()
+    match4 = re.search(date_pattern2,datelarge)
+    if match4:
+        print(match4)
+    else:
+        print("nodate")
+else:
+    print(text)
