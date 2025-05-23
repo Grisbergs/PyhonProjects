@@ -108,9 +108,9 @@ def process_files(directory, csv_path, vin_pattern, output_tiff_path):
     write_results_to_csv(review_results, csv_path)
 
 # Define paths and parameters
-directory = r'\\Qtsprodkfxstor1\Data\CANCELDOCS\DealerOOB'
-csv_path = r'C:\C#Class\FilesocroutputDlr.csv'
-vin_pattern = r'dealer reserve'#r'\b[A-HJ-NPR-Z0-9]{17}\b'
+directory = r'\\Qtsprodkfxstor1\Data\CANCELDOCS\Current'
+csv_path = r'C:\C#Class\vinfiles1.csv'
+vin_pattern = r'\b[A-HJ-NPR-Z0-9]{17}\b'
 output_tiff_path = r'C:\C#Class\output_multipage6.tiff'
 
 # Run the main process
